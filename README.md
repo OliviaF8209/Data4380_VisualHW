@@ -32,25 +32,53 @@ Include only the sections that are relevant an appropriate.
 
 **Sample Images:** A few random images from each class were visualized to check data variety and integrity.
 
-**Augmented Images:** Displayed augmented images showing how techniques like flipping and rotation modify images to enhance model robustness.
 ![image](https://github.com/user-attachments/assets/4f52735a-5b9c-41f0-bcea-de67d7d363b3)
+![image](https://github.com/user-attachments/assets/637d2aef-140d-46b1-a6df-15ad5b6770a1)
+
+**Augmented Images:** Displayed augmented images showing how techniques like flipping and rotation modify images to enhance model robustness.
+
+![image](https://github.com/user-attachments/assets/384500d8-9951-4498-8312-50b728370fa9)
+![image](https://github.com/user-attachments/assets/bd35aeae-9cc1-434e-b85e-29677b3ee83f)
+
+
 
 ### Problem Formulation
 
-* Define:
-  * Input / Output
-  * Models
-    * Describe the different models you tried and why.
-  * Loss, Optimizer, other Hyperparameters.
+* **Define:**
+  * **Input / Output:**
+    - **Input:** Images of fruits resized to 224x224 pixels.
+    - **Output:** Class labels corresponding to the type of fruit in the images (e.g., "Apple Red 2", "Blueberry 1").
+
+  * **Models:**
+    - **Baseline Model:** A transfer learning model using MobileNetV2 with its pre-trained weights, fine-tuned for fruit classification.
+    - **Augmented Model:** The same MobileNetV2 model, but trained with additional data augmentation to improve generalization.
+    - **Additional Models:** Two more models were trained with variations in architecture or parameters to compare performance.
+
+  * **Loss, Optimizer, Other Hyperparameters:**
+    - **Loss Function:** Sparse categorical cross-entropy, appropriate for multi-class classification.
+    - **Optimizer:** Adam optimizer was used for its efficiency in training deep learning models.
+    - **Other Hyperparameters:** Batch size was set to 30, and the number of epochs was 10 for initial training. Dropout was used to prevent overfitting.
+
 
 ### Training
 
-* Describe the training:
-  * How you trained: software and hardware.
-  * How did training take.
-  * Training curves (loss vs epoch for test/train).
-  * How did you decide to stop training.
-  * Any difficulties? How did you resolve them?
+* **Describe the training:**
+  * **How You Trained:**
+    - **Software:** Used TensorFlow and Keras for model implementation and training.
+    - **Hardware:** Training was performed on a local machine with a GPU to accelerate the process.
+
+  * **How Did Training Take:**
+    - **Duration:** Each model was trained for 10 epochs, with training times varying based on model complexity and hardware performance.
+
+  * **Training Curves (Loss vs. Epoch for Test/Train):**
+    - **Plot:** Loss curves were plotted to visualize training and validation losses over epochs. This helped in monitoring overfitting and assessing model performance during training.
+
+  * **How Did You Decide to Stop Training:**
+    - **Stopping Criteria:** Training was stopped after 10 epochs or earlier if overfitting was detected or if the model's performance on validation data plateaued.
+
+  * **Any Difficulties? How Did You Resolve Them?**
+    - **Difficulties:** Encountered issues with data directory paths and dataset loading errors. Resolved by ensuring that all required directories were correctly populated and properly referenced in the code. Additionally, I tried to fix issues with model predictions and ROC curve plotting by adjusting dataset preparation, but the error persisted, claiming the input was empty. Even after confirming the input wasn't empty and removing empty directories, the problem remained unsolved.
+
 
 ### Performance Comparison
 
