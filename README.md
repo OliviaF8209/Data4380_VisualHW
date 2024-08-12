@@ -2,16 +2,14 @@
 
 # Project Title
 
-* **One Sentence Summary** Ex: This repository holds an attempt to apply LSTMs to Stock Market using data from
-"Get Rich" Kaggle challenge (provide link). 
+* **One Sentence Summary** Fruits-360 dataset is full of different types of fruits (Link: https://www.kaggle.com/datasets/moltean/fruits ). 
 
 ## Overview
 
 * This section could contain a short paragraph which include the following:
-  * **Definition of the tasks / challenge**  Ex: The task, as defined by the Kaggle challenge is to use a time series of 12 features, sampled daily for 1 month, to predict the next day's price of a stock.
-  * **Your approach** Ex: The approach in this repository formulates the problem as regression task, using deep recurrent neural networks as the model with the full time series of features as input. We compared the performance of 3 different network architectures.
-  * **Summary of the performance achieved** Ex: Our best model was able to predict the next day stock price within 23%, 90% of the time. At the time of writing, the best performance on Kaggle of this metric is 18%.
-
+  * **Definition of the tasks / challenge**  The challenge in this task is to classify fruit images into different categories using a dataset of fruit images. The goal is to use transfer learning with pre-trained models to build a classifier that can accurately categorize images into specified classes.
+  * **Your approach** Ex: The approach in this repository utilizes transfer learning with pre-trained Keras vision models to address the image classification challenge> I also used transfer learning with pre-trained MobileNetV2 models to classify fruit images. The plan was to evaluate model performance using ROC curves, but I encountered errors during this process.
+  * **Summary of the performance achieved** The performance of the models was planned to be assessed using ROC curves and AUC scores. The augmented model was expected to show improvements over the models trained without augmentation, highlighting the potential benefits of data augmentation in enhancing classification accuracy.
 ## Summary of Workdone
 
 Include only the sections that are relevant an appropriate.
@@ -19,11 +17,10 @@ Include only the sections that are relevant an appropriate.
 ### Data
 
 * Data:
-  * Type: For example
-    * Input: medical images (1000x1000 pixel jpegs), CSV file: image filename -> diagnosis
-    * Input: CSV file of features, output: signal/background flag in 1st column.
-  * Size: How much data?
-  * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
+  * Type: Visual/Image
+    * Input: Fruit/Vegetable images (100x100 pixel jpegs), CSV file: image filename -> diagnosis
+  * Size: 94110 images
+  * Instances (Train, Test, Validation Split): Training set size: 70491 images (one object per image), Test set size: 23619 images (one object per image), The number of classes: 141 (fruits and vegetables).
 
 #### Preprocessing / Clean up
 
