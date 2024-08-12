@@ -24,11 +24,16 @@ Include only the sections that are relevant an appropriate.
 
 #### Preprocessing / Clean up
 
-* Describe any manipulations you performed to the data.
+* - **Data Loading:** Images were loaded from directories using TensorFlow’s `image_dataset_from_directory`, ensuring images were resized to 224x224 pixels to match the input size of the pre-trained models.
+  - **Data Augmentation:** Applied data augmentation techniques such as random horizontal flips and rotations to increase the variability of the training data and improve model generalization.
+  - **Data Organization:** Cleaned up empty directories and ensured that only non-empty directories were used for training and testing.
 
 #### Data Visualization
 
-Show a few visualization of the data and say a few words about what you see.
+**Sample Images:** A few random images from each class were visualized to check data variety and integrity.
+
+**Augmented Images:** Displayed augmented images showing how techniques like flipping and rotation modify images to enhance model robustness.
+![image](https://github.com/user-attachments/assets/4f52735a-5b9c-41f0-bcea-de67d7d363b3)
 
 ### Problem Formulation
 
