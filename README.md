@@ -1,6 +1,6 @@
 ![](UTA-DataScience-Logo.png)
 
-# Project Title
+# Fruits Visual HW
 
 * **One Sentence Summary** Fruits-360 dataset is full of different types of fruits (Link: https://www.kaggle.com/datasets/moltean/fruits ). 
 
