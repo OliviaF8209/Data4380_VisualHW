@@ -53,6 +53,15 @@ Include only the sections that are relevant an appropriate.
     - **Baseline Model:** A transfer learning model using MobileNetV2 with its pre-trained weights, fine-tuned for fruit classification.
     - **Augmented Model:** The same MobileNetV2 model, but trained with additional data augmentation to improve generalization.
     - **Additional Models:** Two more models were trained with variations in architecture or parameters to compare performance.
+   
+Model1
+![image](https://github.com/user-attachments/assets/046e9c92-b51e-4f81-9cec-fada11f29a88)
+
+MOdel2
+![image](https://github.com/user-attachments/assets/b7ae13b3-7150-468d-b997-f0ad2963fc40)
+
+Augmented Model
+![image](https://github.com/user-attachments/assets/67767a06-18fe-4771-abd3-557e551f975c)
 
   * **Loss, Optimizer, Other Hyperparameters:**
     - **Loss Function:** Sparse categorical cross-entropy, appropriate for multi-class classification.
@@ -82,68 +91,82 @@ Include only the sections that are relevant an appropriate.
 
 ### Performance Comparison
 
-* Clearly define the key performance metric(s).
-* Show/compare results in one table.
-* Show one (or few) visualization(s) of results, for example ROC curves.
+* **Key Performance Metrics:** The key metric intended for evaluation was the AUC score from ROC curves. Due to persistent errors with ROC curve plotting, this metric could not be computed. 
+
+* **What Would Have Been Done:** If the errors were resolved, I would have compared models using ROC curves and AUC scores to determine which model performed best in distinguishing between classes.
 
 ### Conclusions
 
-* State any conclusions you can infer from your work. Example: LSTM work better than GRU.
+Data augmentation appeared to improve model performance based on training and validation loss curves, suggesting it enhances model robustness.
 
 ### Future Work
 
-* What would be the next thing that you would try.
-* What are some other studies that can be done starting from here.
+* **Next Steps:** Focus on resolving the errors with ROC curve plotting to accurately assess model performance using AUC scores.
+
+* **Further Studies:** Explore additional performance metrics and refine dataset preprocessing to improve model evaluation and generalization.
 
 ## How to reproduce results
 
-* In this section, provide instructions at least one of the following:
-   * Reproduce your results fully, including training.
-   * Apply this package to other data. For example, how to use the model you trained.
-   * Use this package to perform their own study.
-* Also describe what resources to use for this package, if appropirate. For example, point them to Collab and TPUs.
+Applying to Other Data: To apply the trained model to another dataset, ensure the input data format matches the expectations (avoid errors) and adjust the model's output layers if necessary.
+
+Resources: Using Google Colab with GPU acceleration is recommended for training the models efficiently.
 
 ### Overview of files in repository
 
-* Describe the directory structure, if any.
-* List all relavent files and describe their role in the package.
-* An example:
-  * utils.py: various functions that are used in cleaning and visualizing data.
-  * preprocess.ipynb: Takes input data in CSV and writes out data frame after cleanup.
-  * visualization.ipynb: Creates various visualizations of the data.
-  * models.py: Contains functions that build the various models.
-  * training-model-1.ipynb: Trains the first model and saves model during training.
-  * training-model-2.ipynb: Trains the second model and saves model during training.
-  * training-model-3.ipynb: Trains the third model and saves model during training.
-  * performance.ipynb: loads multiple trained models and compares results.
-  * inference.ipynb: loads a trained model and applies it to test data to create kaggle submission.
+File and Their Roles:
 
-* Note that all of these notebooks should contain enough text for someone to understand what is happening.
+reduced_fruits_360/: Contains the dataset organized into Test and Train directories with subdirectories for each fruit class.
+preprocessing section : Performs preprocessing steps on the dataset, including data cleaning and preparation.
+training-models section : Contains code to define, train, and save three models with different configurations.
+performance-evaluation section: (Loads trained models, evaluates their performance, and compares results.)
 
 ### Software Setup
-* List all of the required packages.
-* If not standard, provide or point to instruction for installing the packages.
-* Describe how to install your package.
+Required Packages:
+import os
+import numpy as np
+import keras
+from keras import layers
+from tensorflow import data as tf_data
+import matplotlib.pyplot as plt
 
-### Data
+TensorFlow
+numpy
+matplotlib
+Installation Instructions:
 
-* Point to where they can download the data.
-* Lead them through preprocessing steps, if necessary.
+Install TensorFlow and other packages using pip:
+pip install tensorflow numpy matplotlib
+
+## Data
+
+**Download Location:**
+
+Data is located in Data 4380/Image Project HW/reduced_fruits_360.
+
+**Preprocessing Steps:**
+
+Organize the dataset into Train and Test directories.
+Ensure images are correctly labeled in their respective class directories.
 
 ### Training
 
-* Describe how to train the model
+**Training Instructions:**
+
+Run training-models section to define, train, and save models.
+Models are trained on images of size (100, 100, 3) and saved as model1.keras, model2.keras, and augmented_fruits_model.keras.
+
 
 #### Performance Evaluation
 
-* Describe how to run the performance evaluation.
+**Evaluation Instructions:**
+Use performance-evaluation.ipynb to load trained models and evaluate their performance.
+Compare model performance using metrics such as accuracy and loss.
 
 
 ## Citations
 
-* Provide any references.
-
-
+* Fruits dataset link: https://www.kaggle.com/datasets/moltean/fruits
+* Black Box AI: https://www.blackbox.ai/
 
 
 
